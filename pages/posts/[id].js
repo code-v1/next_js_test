@@ -4,9 +4,10 @@ import Head from 'next/head';
 import Date from '../posts/date';
 import utilStyles from '../../styles/utils.module.css'
 
+
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+ 
   return {
     props: {
       postData,
@@ -16,7 +17,8 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+ 
+  
   return {
     paths,
     fallback: false,

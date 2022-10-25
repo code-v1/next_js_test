@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
@@ -39,7 +39,7 @@ export function getSortedPostsData() {
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory);
+  
 
   // Returns an array that looks like this:
   // [
