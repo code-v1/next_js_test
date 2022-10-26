@@ -8,6 +8,7 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 
 export function getSortedPostsData() {
   // Get file names under /posts
+  fs
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
@@ -40,7 +41,7 @@ export function getSortedPostsData() {
 
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
-
+fs
   // Returns an array that looks like this:
   // [
   //   {
@@ -66,7 +67,7 @@ export function getAllPostIds() {
 export async function getPostData(id) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-
+fs
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
