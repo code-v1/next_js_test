@@ -1,4 +1,4 @@
-import { getAllPostIds, getPostData } from '../../pages/lib/posts';
+import { getAllPostIds, getPostData } from '../../lib/posts';
 import Layout from '../../pages/components/layout';
 import Head from 'next/head';
 import Date from '../posts/date';
