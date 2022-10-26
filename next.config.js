@@ -2,8 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  fs: false,
-  path: false
+  
   
   
 }
