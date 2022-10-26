@@ -3,30 +3,23 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   
-  
-  
-}
+  webpack: (config, { isServer }) => {
+    
+    // If client-side, don't polyfill `fs`
+    if (!isServer) {
+      config.resolve.fallback = {
+        fs: false,
+      };
+    }
 
-
-
-
-
-module.exports = (phase, { defaultConfig }) => {
-  return {
-    ...defaultConfig,
-
-    webpack: (config) => {
-      config.resolve = {
-        ...config.resolve,
-        fallback: {
-          "fs": false,
-          "path": false,
-          "os": false,
-        }
-      }
-      return config
-    },
+    return config;
   }
+  
 }
+
+
+
+
+
 
 module.exports = nextConfig
